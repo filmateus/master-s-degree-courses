@@ -1,0 +1,85 @@
+/*-- scss:defaults --*/
+
+// 1. Variáveis de Fonte e Cores
+// Importa a Times New Roman (ou similar do Google)
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+// Define a Times New Roman como a fonte principal
+$font-family-sans-serif: "Times New Roman", Times, "Tinos", serif;
+
+// Se quiseres que os títulos também usem Times New Roman
+$presentation-heading-font: "Times New Roman", Times, "Tinos", serif;
+
+// 2. Definição explícita dos tamanhos (para evitar o erro de referência)
+$presentation-h1-font-size: 2.0em;
+$presentation-h2-font-size: 1.8em;
+$presentation-h3-font-size: 1.1em;
+
+$body-size: 1em;
+
+// 3. Outras variáveis base
+$code-block-font-size: 1.5em;
+$code-color: #0b0b0c;
+
+/*-- scss:rules --*/
+
+.reveal .slide-number {
+  color: #f7f7f7 !important; /* Troque pela cor desejada (ex: azul PAVIC) */
+  background-color: transparent !important; /* Remove o fundo preto padrão, se houver */
+  font-size: 15px !important; /* Aumenta o número para a resolução 1080p */
+  font-weight: bold;
+}
+
+.reveal .slide-background-content {
+  background-position: top center !important; /* Prioriza o topo da imagem */
+  background-size: 100% 100% !important;      /* Força a imagem a ocupar 100% da largura e altura do slide */
+}
+
+// Importação da fonte deve ficar preferencialmente aqui
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+
+// Ajuste da CAPA padrão do RevealJS
+.reveal .title-slide {
+  h1.title {
+    color: #FFFFFF !important;
+    font-size: $presentation-h1-font-size; 
+  }
+  .subtitle {
+    color: #FFFFFF !important;
+    font-size: 2.5em;
+  }
+}
+
+// Sua classe customizada para o slide da capa
+.capa {
+  text-align: center;
+  margin-top: 10px;
+
+  h1 { 
+    font-size: 2.5em !important; 
+    color: white !important; 
+  }
+  h2 { 
+    font-size: 1.5em !important; 
+    color: white !important; 
+  }
+  h4 { 
+    font-size: 1em !important; 
+    color: white !important; 
+    margin-top: 10px; 
+  }
+}
+
+// Estilos auxiliares
+.obrigado {
+  text-align: center;
+  h4 {
+    color: #000000 !important;
+    font-size: 3em;
+    font-weight: bold;
+  }
+}
+
+.small-text {
+  font-size: 5em !important;
+}

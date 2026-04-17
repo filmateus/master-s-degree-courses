@@ -1,0 +1,110 @@
+---
+format:
+  revealjs: 
+    # Usa o teu CSS customizado sobre o tema default
+    theme: [default, themes/theme_3.scss] 
+    
+    # Resolução 16:9 (Evita cortes e dá mais espaço para fórmulas)
+    # width: 1920
+    # height: 1080
+    
+    # CORREÇÃO DA IMAGEM DE FUNDO: "contain" garante que o template PAVIC apareça inteiro
+    # Se preferires que a imagem estique para tapar tudo, usa "100% 100%"
+    background-size: "100% 100%"
+    
+    # Configurações de Navegação e Estilo
+    slide-number: true
+    preview-links: auto
+    transition: fade
+    background-transition: fade
+    footer: 'Mestrado em Ciência da Computação' 
+    logo: images/ufpi-icone1.png
+    
+    # Tamanho base da fonte para o corpo do slide
+    font-size: 100px
+    
+    chalkboard: 
+      buttons: false
+
+# Mantém os recursos vinculados
+resources:
+  - aula.pdf
+---
+
+# {background-image="images/Template Slides PAVIC.png"}
+
+<div class="capa">
+  <h1> Regra de Cramer </h1>
+  <h4> Estudos Especiais em Sistema de Energia </h4>
+  <h4> Filipe Costa</h4>
+  <h4> Orientador: Prof. Dr. Ricardo de Andrade Lira Rabêlo </h4>
+</div>
+
+![](images/ufpi-icone1.png){.absolute top=375 left=250 width="125"}
+![](images/pavic.png){.absolute top=375 left=700 width="250"}
+
+
+##  {background-image="images/Template Slides PAVIC 2.jpg"}
+
+### `Pré - Requisitos Teóricos`
+
+- Sistema Linear
+
+$$ 
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+b_1 \\
+b_2 \\
+\vdots \\
+b_n
+\end{pmatrix}
+$$
+
+- Determinante
+
+$$D = \text{det}(A)$$
+
+##  {background-image="images/Template Slides PAVIC 2.jpg"}
+
+### `Determinante de uma Matriz`
+
+- ... é a soma algebrica de n! produtos da forma, cada uma precedida pelo sinal determinada pela regra a seguir:
+
+$$\text{det}(A) = \sum (-1)^{(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n})}a_{\alpha_{1}\alpha_{2}\ldots\alpha_{n}} $$
+
+
+##  {background-image="images/Template Slides PAVIC 2.jpg"}
+### `Regra de Cramer  - Algoritmo`
+
+1. Calcular o determinante da matriz dos coeficientes $D = \text{det}(A)$.
+2. Para cada variável $x_i$, calcular o determinante $D_i$ substituindo a coluna correspondente por $B$.
+3. Calcular a solução para cada variável usando a fórmula $x_i = \frac{D_i}{D}$.  
+
+
+##  {background-image="images/Template Slides PAVIC 2.jpg"}
+
+<style>
+  .obrigado {
+    text-align: center;
+    font-weight: bold; 
+    color: #0b0b0c;
+  }
+</style>
+
+<div class="obrigado">
+  <h4> Obrigado </h4>
+</div>
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXl2bnNoc201Z3J0Ym81bDhhdm0ydzRueDZkYmxvajVnbGlrNDB3dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d68IdpvmAHohx5NMEV/giphy.gif){width="500px" fig-align="center"}
