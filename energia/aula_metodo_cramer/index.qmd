@@ -26,9 +26,9 @@ format:
     chalkboard: 
       buttons: false
 
-# Mantém os recursos vinculados
-resources:
-  - aula.pdf
+project:
+  output-dir: docs
+
 ---
 
 # {background-image="images/Template Slides PAVIC.png"}
