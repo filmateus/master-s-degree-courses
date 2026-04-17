@@ -1,4 +1,7 @@
 ---
+project:
+  output-dir: docs
+
 format:
   revealjs: 
     # Usa o teu CSS customizado sobre o tema default
@@ -26,8 +29,6 @@ format:
     chalkboard: 
       buttons: false
 
-project:
-  output-dir: docs
 
 ---
 
