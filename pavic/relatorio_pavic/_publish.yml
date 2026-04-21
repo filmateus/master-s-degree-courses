@@ -1,0 +1,6 @@
+- source: index.qmd
+  quarto-pub:
+    - id: 903a3816-eca7-4c1a-bee8-39c212335525
+      url: https://filipe2601.quarto.pub/filipe2601
+    - id: 70904024-0ddb-4c51-ab1d-acaf924c5998
+      url: https://filipe2601.quarto.pub/regra_cramer_20261

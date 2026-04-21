@@ -1,0 +1,162 @@
+---
+type: website
+  output-dir: docs
+format: 
+    revealjs:
+        theme:  [simple]
+        css: theme_fm.css
+        logo: "https://www.infoescola.com/wp-content/uploads/2016/05/ufpi.png"
+        logo-size: '300px'
+        footer: "Mestrado em Ciência da Computação"
+        slide-number: true
+        center-title-slide: true
+        width: 1600
+        height: 900
+---
+
+# {background-image="images/Template Slides PAVIC.png" vertical-align="center" text-align="center" style="color: white;"}
+
+<h1 style="color: white;"> "Não sei, só sei que foi assim” - XAI</h1>
+<h4 style="color: white;"> Universidade Federal do Piauí (UFPI) </h4>
+<h4 style="color: white;"> Centro de Tecnologia (CT)</h4>
+<h4 style="color: white;"> Programa de Pós-Graduação em Ciência da Computação (PPGCC) </h4>
+<h4 style="color: white;"> Orientador: Prof. Dr. Ricardo de Andrade Lira Rabêlo </h4>
+
+![](images/ufpi-icone1.png){.absolute top=500 left=400 width="150"}
+![](images/pavic.png){.absolute top=450 left=930 width="300"}
+
+##  {background-image="images/Template Slides PAVIC 2.jpg"  background-position="top center"}
+### Resumo Ilustrativo
+
+![A representation of the tradeoff between flexibility and inter
+pretability, using different statistical learning methods. In general, as the flexibility
+of a method increases, its interpretability decreases.](images/flexibility x nterpretability.jpeg)
+
+- Fonte Imagem: [An Introduction to Statistical Learning](https://www.statlearning.com/) 
+
+##  {background-image="images/Template Slides PAVIC 2.jpg"  background-position="top center"}
+### Definição do Problema
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2psams2NDZubWRvbmEweGhhanZ0cHNycXhiNm92M2txczByaXE3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Vibsr6IH5JybVK32dP/giphy.gif){fig-align="center" width="50%"}
+
+##  {background-image="images/Template Slides PAVIC 2.jpg"  background-position="top center"}
+### Visão Geral da Proposta
+
+
+#### Temos perguntas para a ser respondidas?
+
+- O que é um sistema  _black-box_?
+- Onde XAI está sendo mais utilizado?
+- Podemos usar XAI para melhorar a eficiência de modelos de  *Marchine Learning*?
+
+
+##  {background-image="images/Template Slides PAVIC 2.jpg"  background-position="top center"}
+### Estado/Continuidade da Pesquisa
+
+::: {.container-vertical}
+
+
+::: {.box .box-verde .fragment}
+**Última semana**
+- Leituras finalizadas
+:::
+
+::: {.box .box-amarelo .fragment}
+**Em desenvolvimento**
+- Leituras em andamento
+:::
+
+::: {.box .box-vermelho .fragment}
+**Próximas semanas**
+- Leituras pendentes
+:::
+
+:::
+
+##  {background-image="images/Template Slides PAVIC 2.jpg"  background-position="top center"}
+### Cronograma
+
+
+```{r out.width="95%", }
+#| fig-cap: Cronograma das atividades a serem realizadas durante o mestrado (2026-2027)
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+
+lista_atividades = c(
+    "Cumprimento de Componentes Curriculares.", #1
+    "Definição do orientador e escrita do projeto definitivo.", #7
+    "Levantamento bibliográfico.", #4
+    "Seleção, preparação e teste dos dados.", #6   
+    "Avaliação dos Resultados", #12
+    "Redação da Dissertação.", #8
+    "Qualificação da Dissertação.", #9
+    "Defesa da Dissertação." #11
+  )
+
+# Criando o dataframe do cronograma
+cronograma <- data.frame(
+  atividade = lista_atividades,
+  inicio = c(
+    "2026-03-01", #1
+    "2026-04-01", #7
+    "2026-05-01", #4
+    "2026-10-01", #6
+    "2027-04-01", #12
+
+    "2026-08-01", #8
+    "2026-12-01", #9
+    "2027-08-01" #11
+  ),
+  fim = c(
+    "2027-07-30", #1
+    "2026-06-30", #7
+    "2026-12-30", #4
+    "2027-03-30", #6
+    "2027-07-30", #12
+    "2027-07-30", #8
+    "2026-12-31", #9
+    "2027-08-30" #11
+  )
+)
+
+# Definindo a ordem das atividades
+cronograma$atividade = factor(cronograma$atividade, 
+                              levels = lista_atividades, 
+                              ordered = TRUE)
+
+# Convertendo as colunas de data para o formato Date
+cronograma$inicio <- as.Date(cronograma$inicio)
+cronograma$fim <- as.Date(cronograma$fim)
+
+# Criando o gráfico de Gantt
+ggplot2::ggplot(cronograma, aes(x = inicio, xend = fim, y = reorder(atividade, desc(atividade)), yend = atividade)) +
+  ggplot2::geom_segment(size = 4, color = "#530653") +
+  ggplot2::labs(
+                # title = "Cronograma (2026-2027)",
+                x = "",
+                y = "Atividade") +
+  ggplot2::theme_minimal() +
+  ggplot2::scale_x_date(limits = as.Date(c("2026-02-1", "2027-10-31")), 
+                        date_breaks = "4 months",
+                        date_labels = "%m/%Y") +
+  ggplot2::scale_y_discrete(labels = function(x) stringr::str_wrap(x, width = 30)) +
+  # ggplot2::xlab("Data planejada para a defesa \n (de 18 a 24 meses após o início das aulas).") +
+  ggplot2::theme(axis.text.y = element_text(size = 9),
+                axis.text.x = element_text(size = 9))
+```
+
+
+##  {background-image="images/Template Slides PAVIC 2.jpg"  background-position="top center"}
+### Observações Gerais.
+
+# {background-image="images/Template Slides PAVIC.png" vertical-align="center" text-align="center" style="color: white;"}
+
+<h2 style="color: white;"> "Não sei, só sei que foi assim” - XAI</h2>
+<h4 style="color: white;"> Universidade Federal do Piauí (UFPI) </h4>
+<h4 style="color: white;"> Centro de Tecnologia (CT)</h4>
+<h4 style="color: white;"> Programa de Pós-Graduação em Ciência da Computação (PPGCC) </h4>
+<h4 style="color: white;"> Orientador: Prof. Dr. Ricardo de Andrade Lira Rabêlo </h4>
+
+![](images/ufpi-icone1.png){.absolute top=500 left=400 width="200"}
+![](images/pavic.png){.absolute top=450 left=930 width="400"}
